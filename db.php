@@ -39,7 +39,7 @@ class db
 			if(!$this->link)
 			{
 				printf("blad polaczenia z baza danych");
-				return $this->error = mysqli_connect_error($link);
+				return $this->error = mysqli_connect_error($this->link);
 				
 			}
 			
