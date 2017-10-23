@@ -13,6 +13,7 @@ class db
 		private $database;
 		private $error;
 		private $tablica;
+		private $link;
 
 		
 		
@@ -33,16 +34,16 @@ class db
 			
 			
 			
-			$link = mysqli_connect($host , $login , $password , $database);
+			$this->link = mysqli_connect($host , $login , $password , $database);
 			
-			if(!$link)
+			if(!$this->link)
 			{
 				printf("blad polaczenia z baza danych");
 				return $this->error = mysqli_connect_error($link);
 				
 			}
 			
-			return $link;
+			return $this->link;
 		}
 		
 		public function insert($link)
