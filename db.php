@@ -21,7 +21,7 @@ class db
 
 		public function __Construct()
 		{
-			printf("Kreator Edycji  Bazy danych utworzony KURWA");
+			printf("Narzedzie do edycji bazy danych zostalo stworzone KURWA");
 		}
 		
 		public function open($ht , $lg , $pw , $db)
