@@ -264,13 +264,14 @@ class db
 
 }
 
-$db = new db;
+/*$db = new db;
 
 $con = $db->open("localhost" , "root" , "" , "3i_sklep");
 
 $wyn = $db->fetchPrintOne($con);
 
 print_r($wyn)
+*/
 
 
 
