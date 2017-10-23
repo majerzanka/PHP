@@ -247,14 +247,15 @@ class db
 
 
 }
-
+/*
 $db = new db;
 
 $con = $db->open("localhost" , "root" , "" , "3i_sklep");
 
 $wyn = $db->fetchPrintAll($con);
 
-//print_r($wyn)
+print_r($wyn)
+*/
 
 
 
