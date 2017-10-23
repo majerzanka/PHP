@@ -33,17 +33,17 @@ class db
 			
 			
 			
-			$this->link = mysqli_connect($this->host , $this->login , $this->password , $this->database);
+			$this->sql = mysqli_connect($this->host , $this->login , $this->password , $this->database);
 			
-			if(!$this->link)
+			if(!$this->sql)
 			{
 				printf("blad polaczenia z baza danych");
-				$error =  mysqli_connect_error($this->link);
+				$error =  mysqli_connect_error($this->sql);
 				return $error;
 				
 			}
 			
-			return $this->link;
+			return $this->sql;
 		}
 		
 		/*function debug($link)
