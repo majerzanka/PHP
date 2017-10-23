@@ -78,7 +78,7 @@ class db
 			
 			$this->wynik = mysqli_query($this->sql , "insert into" 
 			. $this->nazwa_tabeli .
-			"(" . $this->nazwa_pola .") VALUES" . $this->wartosc_pola . ";");
+			"(" . $this->nazwa_pola .") VALUES" . $this->wartosc_pola);
 			
 			if($this->wynik)
 				return $this->wynik;
