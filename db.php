@@ -201,7 +201,9 @@ class db
 			
 		}
 		
-		public function fetchPrintAll($link)
+	
+		
+			public function fetchPrintAll($link)
 		{
 			$this->sql = $link;
 			$this->wynik = mysqli_query($this->sql , "SELECT * FROM produkty");
@@ -209,44 +211,26 @@ class db
 			if(!$this->wynik)
 				return false;
 			
-			
 			echo "<table border = 1>";
 			while($this->tablica = mysqli_fetch_array($this->wynik))
 			{
 				echo "<tr>";
+				foreach($this->tablica as $key =>  $val)
+				{
+					if(is_numeric($key))
+					{
 					echo "<td>";
-						echo $this->tablica[0];
+						echo $val;
 					echo "</td>";
+					}
+				}
 					
-					echo "<td>";
-						echo $this->tablica[1];
-					echo "</td>";
-					echo "<td>";
-						echo $this->tablica[2];
-					echo "</td>";
-					echo "<td>";
-						echo $this->tablica[3];
-					echo "</td>";
-					echo "<td>";
-						echo $this->tablica[4];
-					echo "</td>";
-					echo "<td>";
-						echo $this->tablica[5];
-					echo "</td>";
-					echo "<td>";
-						echo $this->tablica[6];
-					echo "</td>";
-					echo "<td>";
-						echo $this->tablica[7];
-					echo "</td>";
 				echo "</tr>";
-			
-			
-				
 			}
 			echo "</table>";
 				
 		}
+		
 		
 		public function close($link)
 		{
@@ -264,14 +248,14 @@ class db
 
 }
 
-/*$db = new db;
+$db = new db;
 
 $con = $db->open("localhost" , "root" , "" , "3i_sklep");
 
-$wyn = $db->fetchPrintOne($con);
+$wyn = $db->fetchPrintAll($con);
 
-print_r($wyn)
-*/
+//print_r($wyn)
+
 
 
 
